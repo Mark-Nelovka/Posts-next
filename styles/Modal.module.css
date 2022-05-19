@@ -1,0 +1,51 @@
+.fixedOverlay {
+  position: fixed;
+  overflow: auto;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  margin-left: -350px;
+  margin-top: -150px;
+}
+
+.modalContainer {
+  background-color: #fff;
+  width: 700px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px;
+  justify-content: center;
+}
+
+.inputTitle {
+  margin-bottom: 50px;
+  /* margin-left: 39%; */
+  height: 30px;
+  width: 500px;
+}
+
+.textA {
+  height: 100px;
+  margin-bottom: 50px;
+  resize: none;
+}
+
+.btnAddPost {
+  font-size: 18px;
+  border: none;
+  background-color: inherit;
+  padding: 10px 10px;
+}
+
+.btnAddPost:hover {
+  background-color: greenyellow;
+}
