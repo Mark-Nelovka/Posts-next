@@ -4,7 +4,7 @@ import { useStore } from "effector-react";
 import Notiflix from "notiflix";
 import { AllPosts } from "../effects/effects";
 import { getPostIdEf } from "../effects/effects";
-import Modal from "../components/modal";
+import Modal from "./modal";
 
 let $searchId = createStore("");
 const $changePostId = createStore("");
