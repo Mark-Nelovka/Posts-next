@@ -46,9 +46,9 @@ function Modal({ open, openModal, onClick, changePostIdS }) {
   };
 
   const closeModal = (e) => {
-    const { nodeName } = e.target;
+    const { nodeName, textContent } = e.target;
     if (nodeName === "DIV") {
-      closeModalAdd();
+      openModal(textContent);
       return;
     }
 

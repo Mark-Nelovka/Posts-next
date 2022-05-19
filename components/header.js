@@ -22,7 +22,7 @@ const { openModalChange } = createApi($modalChange, {
 });
 
 const { openModal } = createApi($modalAdd, {
-  openModal: (state, evt) => {
+  openModal: (state) => {
     return !state;
   },
 });
@@ -64,12 +64,12 @@ function Header({ onClick }) {
           <ul className={s.navList}>
             <li className={s.navItem}>
               <button onClick={allPosts} className={s.navButton}>
-                Fetch all posts
+                All posts
               </button>
             </li>
             <li className={s.navItem}>
               <button onClick={getPostId} className={s.navButton}>
-                Fetch post id:
+                Get post id:
               </button>
               <input
                 onChange={changeId}
@@ -93,7 +93,7 @@ function Header({ onClick }) {
             </li>
             <li className={s.navItem}>
               <button onClick={openModalChange} className={s.navButton}>
-                Put post:
+                Change post:
               </button>
               <input
                 onChange={changePostId}

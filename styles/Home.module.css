@@ -1,0 +1,43 @@
+.listPost {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 0 0;
+  padding: 0 0;
+  list-style: none;
+}
+
+.containerList {
+  padding: 20px 20px;
+}
+
+.titlePost {
+  margin: 0 0;
+}
+
+.listItem {
+  width: 300px;
+  font-family: "Roboto";
+  line-height: 1.2;
+  font-size: 14px;
+}
+
+.listItem:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.buttonList {
+  margin-left: calc(200px / 2);
+  border: none;
+  padding: 5px 15px;
+  border-radius: 10px;
+  font-family: "Roboto";
+  line-height: 1.2;
+  letter-spacing: 0.09em;
+  font-size: 14px;
+}
+
+.buttonList:hover {
+  background-color: tomato;
+  color: white;
+}

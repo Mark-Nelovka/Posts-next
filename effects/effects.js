@@ -4,10 +4,14 @@ import Notiflix from "notiflix";
 import { v4 } from "uuid";
 
 const AllPosts = createEffect(async (onClick) => {
-  const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
-  const result = await res.data;
-  onClick(result);
-  return result;
+  try {
+    const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+    const result = await res.data;
+    onClick(result);
+    return result;
+  } catch (error) {
+    Notiflix.Notify.info("Ooops, something went wrong");
+  }
 });
 
 const getPostIdEf = createEffect(async ({ onClick, searchIdS }) => {
@@ -15,12 +19,16 @@ const getPostIdEf = createEffect(async ({ onClick, searchIdS }) => {
     Notiflix.Notify.warning("Specify user ID");
     return;
   }
-  const resId = await axios.get(
-    `https://jsonplaceholder.typicode.com/posts/${searchIdS}`
-  );
-  const resultId = await resId.data;
-  onClick(resultId);
-  return resultId;
+  try {
+    const resId = await axios.get(
+      `https://jsonplaceholder.typicode.com/posts/${searchIdS}`
+    );
+    const resultId = await resId.data;
+    onClick(resultId);
+    return resultId;
+  } catch (error) {
+    Notiflix.Notify.info("Ooops, something went wrong");
+  }
 });
 
 const postPosts = createEffect(
@@ -30,14 +38,18 @@ const postPosts = createEffect(
       title: addText,
       body: addTextA,
     };
-    const resPost = await axios.post(
-      `https://jsonplaceholder.typicode.com/posts`,
-      body
-    );
-    const resultPost = resPost.data;
-    openModal();
-    onClick(resultPost);
-    return resultPost;
+    try {
+      const resPost = await axios.post(
+        `https://jsonplaceholder.typicode.com/posts`,
+        body
+      );
+      const resultPost = resPost.data;
+      openModal();
+      onClick(resultPost);
+      return resultPost;
+    } catch (error) {
+      Notiflix.Notify.info("Ooops, something went wrong");
+    }
   }
 );
 
@@ -48,22 +60,30 @@ const changePosts = createEffect(
       title: addText,
       body: addTextA,
     };
-    const resChange = await axios.put(
-      `https://jsonplaceholder.typicode.com/posts/${changePostIdS}`,
-      body
-    );
-    const resultChange = resChange.data;
-    openModal();
-    onClick(resultChange);
-    return resultChange;
+    try {
+      const resChange = await axios.put(
+        `https://jsonplaceholder.typicode.com/posts/${changePostIdS}`,
+        body
+      );
+      const resultChange = resChange.data;
+      openModal();
+      onClick(resultChange);
+      return resultChange;
+    } catch (error) {
+      Notiflix.Notify.info("Ooops, something went wrong");
+    }
   }
 );
 
 const deletePost = createEffect(async (id) => {
-  const delPost = await axios.delete(
-    `https://jsonplaceholder.typicode.com/posts/${id}`
-  );
-  return id;
+  try {
+    const delPost = await axios.delete(
+      `https://jsonplaceholder.typicode.com/posts/${id}`
+    );
+    return id;
+  } catch (error) {
+    Notiflix.Notify.info("Ooops, something went wrong");
+  }
 });
 
 deletePost.done.watch(({ _, result }) => {
