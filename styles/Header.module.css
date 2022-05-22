@@ -18,9 +18,13 @@
 }
 
 .navButton {
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
   border: none;
   background-color: inherit;
   padding: 5px 5px;
+  cursor: pointer;
 }
 
 .input {
@@ -58,7 +62,6 @@
 
 .inputTitle {
   margin-bottom: 50px;
-  /* margin-left: 39%; */
   height: 30px;
   width: 500px;
 }
@@ -74,6 +77,7 @@
   border: none;
   background-color: inherit;
   padding: 10px 10px;
+  cursor: pointer;
 }
 
 .btnAddPost:hover {

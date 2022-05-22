@@ -28,7 +28,6 @@
 
 .inputTitle {
   margin-bottom: 50px;
-  /* margin-left: 39%; */
   height: 30px;
   width: 500px;
 }
@@ -44,8 +43,23 @@
   border: none;
   background-color: inherit;
   padding: 10px 10px;
+  cursor: pointer;
 }
 
 .btnAddPost:hover {
   background-color: greenyellow;
+}
+
+.buttonCloseModal {
+  position: absolute;
+  border: none;
+  border-radius: 50px;
+  background-color: inherit;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.buttonCloseModal:hover {
+  transform: scale(1.2);
 }
