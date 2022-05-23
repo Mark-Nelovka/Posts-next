@@ -1,15 +1,16 @@
 import { deletePostFx } from "../store/effects";
 import axios from "axios";
 import Notiflix from "notiflix";
+import { IPosts } from "../interfaces/interfaces";
 
 axios.defaults.baseURL = "https://jsonplaceholder.typicode.com/posts";
 
-deletePostFx.use(async (id) => {
+deletePostFx.use(async (id: number) => {
   if (id > 100) {
     return { id };
   }
   const result = await axios.get(`/${id}`);
-  const deletePostId = await result.data;
+  const deletePostId: IPosts = await result.data;
   return deletePostId;
 });
 

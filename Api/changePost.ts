@@ -2,13 +2,14 @@ import { reset } from "../store/effects";
 import axios from "axios";
 import Notiflix from "notiflix";
 import { changePostFx } from "../store/effects";
+import { IChangePost, IPosts } from "../interfaces/interfaces";
 
 axios.defaults.baseURL = "https://jsonplaceholder.typicode.com/posts";
 
-changePostFx.use(async ({ e, id, textTitle, textArea, posts }) => {
+changePostFx.use(async ({ e, id, textTitle, textArea, posts }: IChangePost) => {
   e.preventDefault();
   if (textTitle === "") {
-    const bodyFind = posts.find((data) => data.id === Number(id));
+    const bodyFind = posts.find((data) => data.id == id);
     const bodyArea = {
       body: textArea,
       title: bodyFind.title,
@@ -19,7 +20,7 @@ changePostFx.use(async ({ e, id, textTitle, textArea, posts }) => {
     return changeTextA;
   }
   if (textArea === "") {
-    const titleFind = posts.find((data) => data.id === Number(id));
+    const titleFind = posts.find((data) => data.id == id);
     const bodyTitle = {
       title: textTitle,
       body: titleFind.body,
@@ -34,7 +35,7 @@ changePostFx.use(async ({ e, id, textTitle, textArea, posts }) => {
     body: textArea,
   };
   const result = await axios.put(`/${id}`, body);
-  const changePostId = await result.data;
+  const changePostId: IPosts = await result.data;
   reset();
   return changePostId;
 });

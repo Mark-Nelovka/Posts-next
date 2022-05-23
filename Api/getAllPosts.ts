@@ -1,12 +1,13 @@
 import { AllPostsFx } from "../store/effects";
 import axios from "axios";
 import Notiflix from "notiflix";
+import { IPosts } from "../interfaces/interfaces";
 
-axios.defaults.baseURL = "https://jsonplaceholder.typicode.com/posts";
+const URL = "https://jsonplaceholder.typicode.com/posts";
 
 AllPostsFx.use(async () => {
-  const result = await axios.get();
-  const arrAllPosts = await result.data;
+  const result = await axios.get(`${URL}`);
+  const arrAllPosts: IPosts[] = await result.data;
   return arrAllPosts;
 });
 

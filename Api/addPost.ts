@@ -1,10 +1,11 @@
-import { reset, addPostFx } from "../store/effects";
+import { reset, addPostFx} from "../store/effects";
 import axios from "axios";
 import Notiflix from "notiflix";
+import { IAddPost, IPosts } from "../interfaces/interfaces";
 
 axios.defaults.baseURL = "https://jsonplaceholder.typicode.com/posts";
 
-addPostFx.use(async ({ e, textTitle, textArea }) => {
+addPostFx.use(async ({ e, textTitle, textArea }: IAddPost) => {
   e.preventDefault();
   const body = {
     title: textTitle,
@@ -15,7 +16,7 @@ addPostFx.use(async ({ e, textTitle, textArea }) => {
     "https://jsonplaceholder.typicode.com/posts",
     body
   );
-  const addRes = await add.data;
+  const addRes: IPosts[] = await add.data;
   reset();
   return [addRes];
 });

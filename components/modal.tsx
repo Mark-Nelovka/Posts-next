@@ -13,8 +13,9 @@ import {
 } from "../store/init";
 import Image from "next/image";
 import cLoseImg from "../images/Close.svg";
+import { IModalProps } from "../interfaces/interfaces";
 
-function Modal({ textButton }) {
+function Modal({ textButton }: IModalProps) {
   const textTitle = useStore($addTitle);
   const textArea = useStore($addText);
   const posts = useStore($posts);
