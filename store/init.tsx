@@ -9,14 +9,12 @@ import {
   $addText,
   addTitle,
   $addTitle,
-} from "./effects";
-import {
   AllPostsFx,
   getPostIdFx,
   deletePostFx,
   addPostFx,
   changePostFx,
-} from "../Api";
+} from ".";
 
 
 import { IPosts } from "../interfaces/interfaces";
@@ -107,18 +105,9 @@ $posts
   });
 
 export {
-  AllPostsFx,
   $posts,
-  valueIdPost,
-  getPostIdFx,
   $userId,
-  deletePostFx,
   $modalStore,
-  modal,
-  addText,
   $addText,
-  addPostFx,
-  addTitle,
   $addTitle,
-  changePostFx,
 };

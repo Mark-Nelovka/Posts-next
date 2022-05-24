@@ -1,12 +1,10 @@
 import s from "../styles/Header.module.css";
 import {
-  AllPostsFx,
-  valueIdPost,
   $userId,
-  getPostIdFx,
-  modal,
   $modalStore,
 } from "../store/init";
+import { modal, valueIdPost } from "../store";
+import { AllPostsFx , getPostIdFx } from "../Api";
 import { useStore } from "effector-react";
 
 import Modal from "./modal";

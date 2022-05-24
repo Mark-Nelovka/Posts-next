@@ -1,4 +1,4 @@
-import { getPostIdFx, reset } from "../store/effects";
+import { getPostIdFx, reset } from "../store";
 import axios from "axios";
 import Notiflix from "notiflix";
 import { IPosts } from "../interfaces/interfaces";

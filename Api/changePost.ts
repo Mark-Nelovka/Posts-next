@@ -1,7 +1,6 @@
-import { reset } from "../store/effects";
+import { reset, changePostFx } from "../store";
 import axios from "axios";
 import Notiflix from "notiflix";
-import { changePostFx } from "../store/effects";
 import { IChangePost, IPosts } from "../interfaces/interfaces";
 
 axios.defaults.baseURL = "https://jsonplaceholder.typicode.com/posts";

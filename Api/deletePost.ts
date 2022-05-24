@@ -1,4 +1,4 @@
-import { deletePostFx } from "../store/effects";
+import { deletePostFx } from "../store";
 import axios from "axios";
 import Notiflix from "notiflix";
 import { IPosts } from "../interfaces/interfaces";

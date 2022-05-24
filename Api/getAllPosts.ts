@@ -1,4 +1,4 @@
-import { AllPostsFx } from "../store/effects";
+import { AllPostsFx } from "../store";
 import axios from "axios";
 import Notiflix from "notiflix";
 import { IPosts } from "../interfaces/interfaces";

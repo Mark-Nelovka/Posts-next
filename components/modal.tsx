@@ -1,16 +1,13 @@
 import { useStore } from "effector-react";
 import s from "../styles/Modal.module.css";
 import {
-  addText,
   $addText,
-  addPostFx,
-  addTitle,
   $addTitle,
-  changePostFx,
   $modalStore,
   $posts,
-  modal,
 } from "../store/init";
+import { modal, addTitle, addText } from '../store';
+import { addPostFx, changePostFx } from '../Api';
 import Image from "next/image";
 import cLoseImg from "../images/Close.svg";
 import { IModalProps } from "../interfaces/interfaces";

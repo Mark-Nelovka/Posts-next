@@ -3,10 +3,12 @@ import { IPosts } from "../interfaces/interfaces";
 
 import { useStore } from "effector-react";
 import s from "../styles/Home.module.css";
-import { $posts, deletePostFx, modal } from "../store/init";
+import { $posts } from "../store/init";
+import { deletePostFx } from "../Api";
+import { modal } from '../store';
 
 export default function Home() {
-  const posts: IPosts[] = useStore($posts);
+const posts: IPosts[] = useStore($posts);
 
   return (
     <>
