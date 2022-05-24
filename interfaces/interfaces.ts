@@ -1,5 +1,5 @@
 interface IPosts {
-  id: string,
+  id?: string,
   title: string,
   body: string
   userId?: number

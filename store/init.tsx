@@ -90,12 +90,18 @@ $posts
     return [...res ,...state];
   })
   .on(changePostFx.doneData, (state, res: IPosts) => {
-    const changePost = state.map((data) => {
-      if (data.id === res.id) {
-        data.title = res.title;
-        data.body = res.body;
+    const changePost = state.map(({title, body, id}) => {
+      if (title !== res.title && body === res.body) {
+        title = res.title
       }
-      return data;
+      if(body !== res.body && title === res.title) {
+        body = res.body
+      }
+      if (id === res.id) {
+        title = res.title;
+        body = res.body;
+      }
+      return {title, body, id};
     });
     return changePost;
   });
