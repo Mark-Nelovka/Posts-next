@@ -90,7 +90,6 @@ $posts
     return [...res ,...state];
   })
   .on(changePostFx.doneData, (state, res: IPosts) => {
-    console.log(res)
     const changePost = state.map((data) => {
       if (data.id === res.id) {
         data.title = res.title;
